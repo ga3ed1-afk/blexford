@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>متجر جوميا جين</title>
+
+  <!-- PWA Settings -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#f97316" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      overscroll-behavior-y: none;
+      /* Prevent pull-to-refresh on mobile app feel */
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  </style>
+  <script>
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      var div = document.getElementById('root');
+      if (div) {
+        div.innerHTML = '<div style="color: red; padding: 20px; font-family: Cairo, sans-serif; text-align: center;">' +
+          '<h3>⚠️ حدث خطأ أثناء التحميل:</h3>' +
+          '<p style="direction: ltr;">' + msg + '</p>' +
+          '<button onclick="localStorage.clear(); location.reload();" style="background: #f68b1e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 20px;">إعادة ضبط الموقع (مسح البيانات)</button>' +
+          '</div>';
+      }
+      return false;
+    };
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <div id="root">
+    <div
+      style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Cairo, sans-serif;">
+      جاري التحميل...
+    </div>
+  </div>
+  <script type="text/babel" data-presets="react,typescript" src="./index.tsx"></script>
+</body>
+
+</html>
